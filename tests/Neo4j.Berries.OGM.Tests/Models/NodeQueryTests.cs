@@ -14,7 +14,7 @@ public class NodeQueryTests
 
     public NodeQueryTests()
     {
-        _graphContext = new ApplicationGraphContext(new Neo4jOptions(ConfigurationsFactory.Config));
+        _graphContext = new ApplicationGraphContext(new Neo4jOptions(ConfigurationsFactory.Config.GetSection("Neo4j")));
         _ = new Neo4jSingletonContext(GetType().Assembly);
     }
 

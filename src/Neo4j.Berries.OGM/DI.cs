@@ -1,34 +1,16 @@
 using System.Reflection;
 using Neo4j.Berries.OGM.Contexts;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Neo4j.Berries.OGM.Models.Config;
+using Microsoft.Extensions.Options;
+using Neo4j.Driver;
+using System;
 
 namespace Neo4j.Berries.OGM;
 
 public static class DI
 {
-    /// <summary>
-    /// Adds the Neo4j context to the service collection
-    /// </summary>
-    [Obsolete("This method is obsolete, please use the other AddNeo4j<TContext> method override instead.")]
-    public static IServiceCollection AddNeo4j<TContext>(this IServiceCollection services, IConfiguration configuration, params Assembly[] assembly)
-    where TContext : GraphContext
-    {
-        services.AddSingleton(sp =>
-        {
-            return new Neo4jSingletonContext(assembly);
-        });
-        services.AddScoped(sp =>
-        {
-            sp.GetRequiredService<Neo4jSingletonContext>();
-            var neo4jOptions = new Neo4jOptions(configuration);
-            return Activator.CreateInstance(typeof(TContext), neo4jOptions) as TContext;
-        });
-        return services;
-    }
-
-    public static IServiceCollection AddNeo4j<TContext>(this IServiceCollection services, IConfiguration configuration, Action<OGMConfigurationBuilder> options)
+    public static IServiceCollection AddNeo4j<TContext>(this IServiceCollection services, Action<OGMConfigurationBuilder> options)
     where TContext : GraphContext
     {
         services.AddSingleton(sp =>
@@ -37,10 +19,12 @@ public static class DI
             options(configurationBuilder);
             return new Neo4jSingletonContext(configurationBuilder);
         });
+
         services.AddScoped(sp =>
         {
+            var neo4jOptions = sp.GetRequiredService<IOptions<Neo4jOptions>>().Value;
             sp.GetRequiredService<Neo4jSingletonContext>();
-            var neo4jOptions = new Neo4jOptions(configuration);
+
             return Activator.CreateInstance(typeof(TContext), neo4jOptions) as TContext;
         });
         return services;

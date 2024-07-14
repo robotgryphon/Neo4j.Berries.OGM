@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4j.Berries.OGM", "src\Neo4j.Berries.OGM\Neo4j.Berries.OGM.csproj", "{5505D536-EDD3-47D2-8802-7CE78E5073AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4j.Berries.OGM.Tests", "tests\Neo4j.Berries.OGM.Tests\Neo4j.Berries.OGM.Tests.csproj", "{BCE90813-DF62-4A8C-A830-8CD65703A168}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5505D536-EDD3-47D2-8802-7CE78E5073AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5505D536-EDD3-47D2-8802-7CE78E5073AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5505D536-EDD3-47D2-8802-7CE78E5073AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5505D536-EDD3-47D2-8802-7CE78E5073AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE90813-DF62-4A8C-A830-8CD65703A168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE90813-DF62-4A8C-A830-8CD65703A168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE90813-DF62-4A8C-A830-8CD65703A168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE90813-DF62-4A8C-A830-8CD65703A168}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA25735F-6AEE-4744-99EB-0CCBABC0530B}
+	EndGlobalSection
+EndGlobal

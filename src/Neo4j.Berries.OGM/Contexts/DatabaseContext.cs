@@ -1,26 +1,37 @@
 using Neo4j.Driver;
+using System;
 
 namespace Neo4j.Berries.OGM.Contexts;
 
-public sealed class DatabaseContext(Neo4jOptions neo4jOptions)
+public sealed class DatabaseContext
 {
-    public IDriver Driver { get; private set; } = neo4jOptions.Driver;
+    public IDriver Driver { get; }
+
     /// <summary>
     /// This getter opens a session with database from the config. If the database is not set, it will open a session with the default database.
     /// </summary>
-    public ISession Session { get; } = neo4jOptions.Driver.Session(opt =>
-    {
-        if (!string.IsNullOrEmpty(neo4jOptions.Database))
-            opt.WithDatabase(neo4jOptions.Database);
-    });
+    public ISession Session { get; }
+
     /// <summary>
     /// This getter opens a session with database from the config. If the database is not set, it will open a session with the default database.
     /// </summary>
-    public IAsyncSession AsyncSession { get; } = neo4jOptions.Driver.AsyncSession(opt =>
+    public IAsyncSession AsyncSession { get; }
+
+    public DatabaseContext(Neo4jOptions neo4jOptions)
     {
-        if (!string.IsNullOrEmpty(neo4jOptions.Database))
-            opt.WithDatabase(neo4jOptions.Database);
-    });
+        Driver = GraphDatabase.Driver(neo4jOptions.Url, AuthTokens.Basic(neo4jOptions.Username, neo4jOptions.Password));
+        Session = Driver.Session(opt =>
+        {
+            if (!string.IsNullOrEmpty(neo4jOptions.Database))
+                opt.WithDatabase(neo4jOptions.Database);
+        });
+
+        AsyncSession = Driver.AsyncSession(opt =>
+        {
+            if (!string.IsNullOrEmpty(neo4jOptions.Database))
+                opt.WithDatabase(neo4jOptions.Database);
+        });
+    }
 
     public ITransaction Transaction { get; private set; }
 
