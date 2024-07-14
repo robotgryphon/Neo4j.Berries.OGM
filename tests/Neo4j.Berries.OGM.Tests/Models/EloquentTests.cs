@@ -1,7 +1,4 @@
-using System.Runtime.CompilerServices;
 using Neo4j.Berries.OGM.Enums;
-using Neo4j.Berries.OGM.Models;
-using Neo4j.Berries.OGM.Tests.Mocks;
 using Neo4j.Berries.OGM.Tests.Mocks.Models;
 using FluentAssertions;
 using Neo4j.Berries.OGM.Models.Queries;

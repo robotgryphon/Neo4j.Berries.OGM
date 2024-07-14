@@ -1,10 +1,7 @@
-using System.Reflection;
 using Neo4j.Berries.OGM.Contexts;
 using Microsoft.Extensions.DependencyInjection;
 using Neo4j.Berries.OGM.Models.Config;
 using Microsoft.Extensions.Options;
-using Neo4j.Driver;
-using System;
 
 namespace Neo4j.Berries.OGM;
 

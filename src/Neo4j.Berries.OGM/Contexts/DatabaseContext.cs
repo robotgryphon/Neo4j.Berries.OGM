@@ -1,5 +1,4 @@
 using Neo4j.Driver;
-using System;
 
 namespace Neo4j.Berries.OGM.Contexts;
 

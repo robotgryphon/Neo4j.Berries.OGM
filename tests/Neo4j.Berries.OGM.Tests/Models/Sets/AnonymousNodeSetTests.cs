@@ -1,9 +1,6 @@
 using System.Text;
 using FluentAssertions;
-using Neo4j.Berries.OGM.Enums;
-using Neo4j.Berries.OGM.Models.Config;
 using Neo4j.Berries.OGM.Models.Sets;
-using Neo4j.Berries.OGM.Tests.Mocks.Models;
 
 namespace Neo4j.Berries.OGM.Tests.Models.Sets;
 

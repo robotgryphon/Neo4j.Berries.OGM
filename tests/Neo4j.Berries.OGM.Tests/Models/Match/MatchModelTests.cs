@@ -1,6 +1,5 @@
 using System.Text;
 using Neo4j.Berries.OGM.Enums;
-using Neo4j.Berries.OGM.Models;
 using Neo4j.Berries.OGM.Models.Config;
 using Neo4j.Berries.OGM.Models.Match;
 using Neo4j.Berries.OGM.Tests.Mocks.Models;

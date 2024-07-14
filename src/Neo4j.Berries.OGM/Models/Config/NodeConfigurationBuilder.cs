@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using Neo4j.Berries.OGM.Enums;
 
 namespace Neo4j.Berries.OGM.Models.Config;

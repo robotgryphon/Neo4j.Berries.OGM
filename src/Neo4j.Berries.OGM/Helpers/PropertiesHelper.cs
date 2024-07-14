@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Reflection;
 using Neo4j.Berries.OGM.Interfaces;
 using Neo4j.Berries.OGM.Models.Config;

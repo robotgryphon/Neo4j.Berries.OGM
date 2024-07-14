@@ -1,11 +1,9 @@
-using System.Reflection;
-using System.Collections;
 using Neo4j.Berries.OGM.Interfaces;
 using Neo4j.Berries.OGM.Models.Config;
-using Microsoft.VisualBasic;
+using System.Collections;
+using System.Reflection;
 
 namespace Neo4j.Berries.OGM.Utils;
-
 
 public static class ObjectUtils
 {

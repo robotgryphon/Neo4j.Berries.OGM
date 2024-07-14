@@ -1,4 +1,3 @@
-using FluentAssertions.Equivalency.Tracing;
 using Neo4j.Berries.OGM.Enums;
 using Neo4j.Berries.OGM.Interfaces;
 using Neo4j.Berries.OGM.Models.Config;

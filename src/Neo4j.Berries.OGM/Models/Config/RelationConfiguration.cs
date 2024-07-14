@@ -1,5 +1,3 @@
-using System.Linq;
-using System.Reflection;
 using Neo4j.Berries.OGM.Enums;
 using Neo4j.Berries.OGM.Interfaces;
 

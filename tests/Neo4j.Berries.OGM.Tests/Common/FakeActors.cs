@@ -1,4 +1,3 @@
-using Neo4j.Berries.OGM.Tests.Mocks.Models;
 using Bogus;
 
 namespace Neo4j.Berries.OGM.Tests.Common;

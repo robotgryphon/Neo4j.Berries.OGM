@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace Neo4j.Berries.OGM.Enums;
 
 public enum ComparisonOperator
